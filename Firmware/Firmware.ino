@@ -36,8 +36,8 @@ const char *PASSWORD = "PASSWORD" ; // Enter your Wi-Fi password
 
 
 // These Dweet tokens have been auto generated for you.
-char* const inputToken  = "YOURTOKEN_input";
-char* const outputToken = "YOURTOKEN_output";
+//char* const inputToken  = "YOURTOKEN_input";
+//char* const outputToken = "YOURTOKEN_output";
 
 Dweet dweet( &wifi, inputToken, outputToken);
 
@@ -105,9 +105,9 @@ void loop() {
     {
         Serial.println(F("PiezoSpeaker was pressed!"));
         // The Piezo Speaker light will play a beep for half a second, wait for another 500ms(half a second) and then play a tune
-        PiezoSpeaker.tone(400,500);                                                    // 1. plays a 400Hz beep. Change the value in the brackets (400) for a higher or lower beep.
+ //       PiezoSpeaker.tone(400,500);                                                    // 1. plays a 400Hz beep. Change the value in the brackets (400) for a higher or lower beep.
         delay(500);                                                               // 4. waits 500ms                   
-        PiezoSpeaker.playMelody(HoorayLength, HoorayMelody, HoorayNoteDurations);  // 5. plays the Hurray melody. to play a different melody, modify HoorayLength, HoorayMelody and HoorayNoteDuration above.                    
+//        PiezoSpeaker.playMelody(HoorayLength, HoorayMelody, HoorayNoteDurations);  // 5. plays the Hurray melody. to play a different melody, modify HoorayLength, HoorayMelody and HoorayNoteDuration above.                    
         delay(500);                                                               // 4. waits 500ms
     }
     else if(strcmp(dweet.getValue() , "playGame") == 0)
@@ -115,7 +115,7 @@ void loop() {
         Serial.println(F("Playing Game!"));
         while (!pir.read())
         {
-          PiezoSpeaker.playMelody(comeLength, comeMelody, comeNoteDurations);
+   //       PiezoSpeaker.playMelody(comeLength, comeMelody, comeNoteDurations);
           delay(500);
         }
         
@@ -126,7 +126,7 @@ void loop() {
         delay(1000);
         servo.detach();
         
-        PiezoSpeaker.playMelody(HoorayLength, HoorayMelody, HoorayNoteDurations);  // 5. plays the Hurray melody. to play a different melody, modify HoorayLength, HoorayMelody and HoorayNoteDuration above.                    
+//        PiezoSpeaker.playMelody(HoorayLength, HoorayMelody, HoorayNoteDurations);  // 5. plays the Hurray melody. to play a different melody, modify HoorayLength, HoorayMelody and HoorayNoteDuration above.                    
         
         delay(100);
     }
